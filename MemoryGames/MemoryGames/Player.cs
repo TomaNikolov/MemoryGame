@@ -1,25 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MemoryGames
 {
-    class Player : IPrintable
+   public class Player 
     {
         public string Name { get; set; }
         public int Score { get; set; }
+        public int SuccessCoefficient { get; set; }
 
-        public Player(string name, int score)
+        public Player(string name)
         {
             this.Name = name;
-            this.Score = score;
-        }
-
-        public void Print(int positionX, int positionY)
-        {
-            throw new NotImplementedException();
+            this.Score = 0;
+            this.SuccessCoefficient = 20;
         }
     }
 }

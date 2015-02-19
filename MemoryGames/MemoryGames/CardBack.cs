@@ -1,29 +1,83 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MemoryGames
 {
-    class CardBack : Card, IPrintable
-    {
+   public class CardBack : Card, IPrintable
+    { 
         public CardBack()
         {
             this.IsVisible = true;
         }
-        public override void DrowSelf(int positionX, int positionY)
+
+        public override void DrowSelf(int row, int col)
         {
             if (IsVisible)
             {
-                Print(positionX, positionY);
+                CardPosition position = CardPosition.GeneratePosition(row, col);
+                Print(position);
             }
         }
 
-
-        public void Print(int positionX, int positionY)
+        public void Print(CardPosition topleft)
         {
-            Console.SetCursorPosition(positionX, positionY);
+            Console.SetCursorPosition(topleft.X, topleft.Y);
+            topleft.Y++;
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("##=##=##");
+            Console.SetCursorPosition(topleft.X, topleft.Y);
+            topleft.Y++;
+            Console.Write("#**");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("/\\");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("**#");
+            Console.SetCursorPosition(topleft.X, topleft.Y);
+            topleft.Y++;
+            Console.Write("#*");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("//\\\\");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("*#");
+            Console.SetCursorPosition(topleft.X, topleft.Y);
+            topleft.Y++;
+            Console.Write("#");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("//");
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.Write("??");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("\\\\");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("#");
+            Console.SetCursorPosition(topleft.X, topleft.Y);
+            topleft.Y++;
+            Console.Write("#");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("\\\\");
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.Write("??");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("//");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("#");
+            Console.SetCursorPosition(topleft.X, topleft.Y);
+            topleft.Y++;
+            Console.Write("#*");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("\\\\//");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("*#");
+            Console.SetCursorPosition(topleft.X, topleft.Y);
+            topleft.Y++;
+            Console.Write("#**");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("\\/");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("**#");
+            Console.SetCursorPosition(topleft.X, topleft.Y);
+            topleft.Y++;
+            Console.WriteLine("##=##=##");
+            Console.ResetColor();
         }
     }
 }

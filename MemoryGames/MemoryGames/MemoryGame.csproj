@@ -47,8 +47,10 @@
     <Compile Include="CardFace.cs" />
     <Compile Include="CardPosition.cs" />
     <Compile Include="CardRandomPosition.cs" />
+    <Compile Include="ConsoleInput.cs" />
     <Compile Include="GameBackground.cs" />
-    <Compile Include="InterceptMouse.cs" />
+    <Compile Include="GameEngine.cs" />
+    <Compile Include="GameManager.cs" />
     <Compile Include="IPrintable.cs" />
     <Compile Include="Memory.cs" />
     <Compile Include="Player.cs" />

@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace MemoryGames
 {
-    class CardFace : Card, IPrintable
+    public class CardFace : Card, IPrintable
     {
-        public CardFace()
+        public string CardName { get; set; }
+        public CardFace(string cardName)
         {
+            this.CardName = cardName;
             this.IsVisible = false;
         }
         public override void DrowSelf(int positionX, int positionY)
@@ -17,15 +19,26 @@ namespace MemoryGames
             throw new NotImplementedException();
         }
 
-        public void Print(int positionX, int positionY)
+        public void Print(CardPosition topLeft)
         {
             throw new NotImplementedException();
+
         }
 
-        public override bool Equals(object obj)
+        public static bool operator ==(CardFace firstCardFace, CardFace secondCardFace)
         {
-            return base.Equals(obj);
+            if (firstCardFace.CardName == secondCardFace.CardName)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-
+        public static bool operator !=(CardFace firstCardFace, CardFace secondCardFace)
+        {
+            return !(firstCardFace == secondCardFace);
+        }
     }
 }
