@@ -81,27 +81,35 @@ namespace MemoryGames
         {
             return !(firstCardFace == secondCardFace);
         }
+        public override  bool Equals(object obj)
+        {
+            return (this == (CardFace)obj);
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
         #region CardOne
         public static void PrintCardOne(CardPosition topleft)
         {
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("§§§§§§§§§§");
+            Console.WriteLine("§§§§§§§§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("§§");
+            Console.Write("§");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("/");
             Console.Write("  ");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("\\");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("§§");
+            Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -110,7 +118,7 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("§§");
+            Console.Write("§");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("\\");
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -118,7 +126,7 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("/");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("§§");
+            Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -127,7 +135,7 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("§§");
+            Console.Write("§");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("/");
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -135,7 +143,7 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("\\");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("§§");
+            Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -144,7 +152,7 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("§§");
+            Console.Write("§");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("\\");
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -152,7 +160,7 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("/");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("§§");
+            Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -161,14 +169,14 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("§§");
+            Console.Write("§");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("/");
             Console.Write("  ");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("\\");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("§§");
+            Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -177,7 +185,7 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("§§");
+            Console.Write("§");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("\\");
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -185,14 +193,14 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("/");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("§§");
+            Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("§§§§§§§§§§");
+            Console.WriteLine("§§§§§§§§");
             Console.ResetColor();
         }
         #endregion
@@ -287,18 +295,18 @@ namespace MemoryGames
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("§§§§§§§§§§");
+            Console.WriteLine("§§§§§§§§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write("o_");
+            Console.Write("_");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("\\\\//");
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write("_0");
+            Console.Write("_");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -307,11 +315,11 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write("0__");
+            Console.Write("__");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("\\/");
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write("__o");
+            Console.Write("__");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -320,11 +328,11 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write("o_");
+            Console.Write("_");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("\\\\//");
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write("_0");
+            Console.Write("_");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -333,11 +341,11 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write("0__");
+            Console.Write("__");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("\\/");
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write("__o");
+            Console.Write("__");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -346,11 +354,11 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write("o_");
+            Console.Write("_");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("\\\\//");
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write("_0");
+            Console.Write("_");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -359,18 +367,18 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write("0__");
+            Console.Write("__");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("\\/");
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write("__o");
+            Console.Write("__");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("§§§§§§§§§§");
+            Console.WriteLine("§§§§§§§§");
 
             Console.ResetColor();
         }
@@ -381,13 +389,13 @@ namespace MemoryGames
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("§§§§§§§§§§");
+            Console.WriteLine("§§§§§§§§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.Write("|~~~~~~|");
+            Console.Write("|~~~~|");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -396,7 +404,7 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.Write("|  ##  |");
+            Console.Write("| ## |");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -405,7 +413,7 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.Write("|  ##  |");
+            Console.Write("| ## |");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -414,7 +422,7 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.Write("|  ##  |");
+            Console.Write("| ## |");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -423,7 +431,7 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.Write("|  ##  |");
+            Console.Write("| ## |");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -432,14 +440,14 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.Write("|~~~~~~|");
+            Console.Write("|~~~~|");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("§§§§§§§§§§");
+            Console.WriteLine("§§§§§§§§");
             Console.ResetColor();
         }
         #endregion
@@ -449,18 +457,18 @@ namespace MemoryGames
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("§§§§§§§§§§");
+            Console.WriteLine("§§§§§§§§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("%%");
+            Console.Write("%");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("_");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("%%");
+            Console.Write("%");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("_");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
@@ -473,11 +481,11 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("%");
+            Console.Write("");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("/ \\/ \\");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("%");
+            Console.Write("");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -486,10 +494,23 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("%");
+            Console.Write("");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("\\    /");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.Write("");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("§");
+            Console.SetCursorPosition(topleft.X, topleft.Y);
+            topleft.Y++;
+
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.Write("§");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.Write("%");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("\\  /");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.Write("%");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
@@ -501,7 +522,7 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.Write("%%");
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("\\  /");
+            Console.Write("\\/");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.Write("%%");
             Console.ForegroundColor = ConsoleColor.DarkGray;
@@ -512,27 +533,14 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("%%%");
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("\\/");
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("%%%");
+            Console.Write("%%%%%%");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write("§");
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("%%%%%%%%");
-            Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("§");
-            Console.SetCursorPosition(topleft.X, topleft.Y);
-            topleft.Y++;
-
-            Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("§§§§§§§§§§");
+            Console.WriteLine("§§§§§§§§");
 
             Console.ResetColor();
         }
@@ -658,13 +666,12 @@ namespace MemoryGames
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("§§§§§§§§§§");
+            Console.WriteLine("§§§§§§§§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
-            Console.Write(" ");
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(".");
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
@@ -672,7 +679,6 @@ namespace MemoryGames
             Console.Write(" ");
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(".");
-            Console.Write(" ");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -680,7 +686,6 @@ namespace MemoryGames
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
-            Console.Write(" ");
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(".");
             Console.Write(" ");
@@ -688,7 +693,6 @@ namespace MemoryGames
             Console.Write(")))");
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(".");
-            Console.Write(" ");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -696,7 +700,6 @@ namespace MemoryGames
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
-            Console.Write(" ");
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(".");
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
@@ -704,7 +707,6 @@ namespace MemoryGames
             Console.Write(" ");
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(".");
-            Console.Write(" ");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -712,7 +714,6 @@ namespace MemoryGames
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
-            Console.Write(" ");
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(".");
             Console.Write(" ");
@@ -720,7 +721,6 @@ namespace MemoryGames
             Console.Write(")))");
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(".");
-            Console.Write(" ");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -728,7 +728,6 @@ namespace MemoryGames
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
-            Console.Write(" ");
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(".");
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
@@ -736,7 +735,6 @@ namespace MemoryGames
             Console.Write(" ");
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(".");
-            Console.Write(" ");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -744,7 +742,6 @@ namespace MemoryGames
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
-            Console.Write(" ");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write(".");
             Console.Write(" ");
@@ -752,14 +749,13 @@ namespace MemoryGames
             Console.Write(")))");
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(".");
-            Console.Write(" ");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("§§§§§§§§§§");
+            Console.WriteLine("§§§§§§§§");
 
             Console.ResetColor();
         }
@@ -770,18 +766,18 @@ namespace MemoryGames
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("§§§§§§§§§§");
+            Console.WriteLine("§§§§§§§§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("::");
+            Console.Write(":");
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.Write("|\\/|");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("::");
+            Console.Write(":");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -790,11 +786,11 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("::");
+            Console.Write(":");
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.Write("|/\\|");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("::");
+            Console.Write(":");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -803,11 +799,11 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("::");
+            Console.Write(":");
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.Write("|\\/|");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("::");
+            Console.Write(":");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -816,11 +812,11 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("::");
+            Console.Write(":");
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.Write("|/\\|");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("::");
+            Console.Write(":");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -829,11 +825,11 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("::");
+            Console.Write(":");
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.Write("|\\/|");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("::");
+            Console.Write(":");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
@@ -842,18 +838,18 @@ namespace MemoryGames
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("§");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("::");
+            Console.Write(":");
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.Write("|/\\|");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("::");
+            Console.Write(":");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§");
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("§§§§§§§§§§");
+            Console.WriteLine("§§§§§§§§");
             Console.ResetColor();
         }
         #endregion
