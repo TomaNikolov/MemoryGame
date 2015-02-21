@@ -36,6 +36,20 @@ namespace MemoryGames
             }
             return cardFace;
         }
+
+        public static CardBack[,] GetCardBack(int level)
+        {
+            const int colEnd = 6;
+            CardBack[,] cardBack = new CardBack[level, colEnd];
+            for (int row = 0; row < cardBack.GetLength(0); row++)
+            {
+                for (int col = 0; col < cardBack.GetLength(1); col++)
+                {
+                    cardBack[row, col] = new CardBack();
+                }
+            }
+            return cardBack;
+        }
     }
 }
 
