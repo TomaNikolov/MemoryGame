@@ -14,5 +14,7 @@ namespace MemoryGames
             this.Score = 0;
             this.SuccessCoefficient = 20;
         }
+
+
     }
 }

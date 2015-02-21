@@ -39,7 +39,7 @@ namespace MemoryGames
                 }
                 GameBackground.MenuBackground(position, ConsoleColor.Black, ConsoleColor.Red);
                 position = menuSwitchPosition % menuItemCount;
-                GameBackground.MenuBackground(position, ConsoleColor.Magenta, ConsoleColor.Red);
+                GameBackground.MenuBackground(position, ConsoleColor.Cyan, ConsoleColor.Blue); //Changed 20:49, 21.2 - Ivan (was magenta, red);
 
                 Thread.Sleep(400);
             }
@@ -57,7 +57,7 @@ namespace MemoryGames
 
             CardBack[,] cardBack = CardRandomPosition.GetCardBack(level);
             CardFace[,] cardFace = CardRandomPosition.GetRandomCardFace(cardBack.GetLength(0), cardBack.GetLength(1));
-             GameEngine gameEngine = new GameEngine(cardBack, cardFace, new Player("PlayerName"), level);
+             GameEngine gameEngine = new GameEngine(cardBack, cardFace, new Player(ConsoleInput.GetInput()), level); // 22:02, 21.2 Ivan (was "PlayerName")
             gameEngine.Run();
         }
         private static void LoadGame()

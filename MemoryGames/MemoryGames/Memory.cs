@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Everything starts here.
+// Window size is set, logo is printed and game menu is called.
+
+using System;
 
 namespace MemoryGames
 {
