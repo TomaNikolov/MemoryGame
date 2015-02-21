@@ -4,22 +4,37 @@ using System.Linq;
 
 namespace MemoryGames
 {
-   public class CardRandomPosition
+    public class CardRandomPosition
     {
-      private  List<CardFace> gameCard = new List<CardFace>();
-
-      private  string[] cardName = new string[8];//here will be the name of the card
-
-       private Random randomGenerator = new Random();
-
-        public static void FillMatrix()
+        public static CardFace[,] GetRandomCardFace(int dimentionZero, int dimentionOne)
         {
-        }
+            const int pair = 2;
+            const int pairCount = 9;
+            CardFace[,] cardFace = new CardFace[dimentionZero, dimentionOne];
+            Random randomGenerator = new Random();
+            List<CardFace> gameCard = new List<CardFace>();
+            int allCard = dimentionZero * dimentionOne;
+            int currentGameCardPair = allCard / pair;
+            string[] cardName = new string[pairCount] { "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" };
+            for (int element = 0, j = 0; element < allCard; element++, j++)
+            {
+                if (j == currentGameCardPair)
+                {
+                    j = 0;
+                }
+                gameCard.Add(new CardFace(cardName[j]));
+            }
+            for (int row = 0; row < dimentionZero; row++)
+            {
+                for (int col = 0; col < dimentionOne; col++)
+                {
+                    int randomElement = randomGenerator.Next(0, gameCard.Count);
+                    cardFace[row, col] = gameCard[randomElement];
+                    gameCard.RemoveAt(randomElement);
 
-
-        internal static CardFace[,] GetRandomCardFace()
-        {
-            throw new NotImplementedException();
+                }
+            }
+            return cardFace;
         }
     }
 }
