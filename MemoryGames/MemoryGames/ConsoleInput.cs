@@ -6,7 +6,11 @@ namespace MemoryGames
     {
         public static CardPosition GetPositionFromInput()
         {
-            throw new NotImplementedException();
+            Console.Write("Row: ");
+             int row = int.Parse(Console.ReadLine());
+             Console.Write("Col: ");
+             int col = int.Parse(Console.ReadLine());
+             return new CardPosition(row, col);
         }
     }
 }
