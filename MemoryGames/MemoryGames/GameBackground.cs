@@ -32,28 +32,7 @@ namespace MemoryGames
             Console.WriteLine(new string('#', 77));
             Console.ResetColor();
         }
-        public static void Grid()
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.SetCursorPosition(0, 24);
-            Console.WriteLine(new string('-', 77));
-            int row = 12;
-
-            for (int i = 0; i < 5; i++)
-            {
-                int col = 15;
-                for (int j = 0; j < 19; j++)
-                {
-
-                    Console.SetCursorPosition(row, col);
-                    Console.Write("|");
-                    col++;
-                }
-                row += 13;
-            }
-            Console.ResetColor();
-        }
-
+       
         public static void MenuBackground(int position, ConsoleColor backgroundColor, ConsoleColor foregroundColor)
         {
             switch (position)
