@@ -47,25 +47,18 @@ namespace MemoryGames
             switch (position)
             {
                 case 0:
-                    NewGame();
+                    NewGame(1);
                     break;
             }
         }
 
-        private static void NewGame()
+        private static void NewGame(int level)
         {
 
-            CardBack[,] cardBack = new CardBack[2, 6];
-            for (int row = 0; row < cardBack.GetLength(0); row++)
-            {
-                for (int col = 0; col < cardBack.GetLength(1); col++)
-                {
-                    cardBack[row, col] = new CardBack();
-                }
-            }
-            // CardFace[,] cardFace = CardRandomPosition.GetRandomCardFace();
-            // GameEngine gameEngine = new GameEngine(cardBack, cardFace, new Player("PlayerName"));
-            // gameEngine.Run();
+            CardBack[,] cardBack = CardRandomPosition.GetCardBack(level);
+            CardFace[,] cardFace = CardRandomPosition.GetRandomCardFace(cardBack.GetLength(0), cardBack.GetLength(1));
+             GameEngine gameEngine = new GameEngine(cardBack, cardFace, new Player("PlayerName"), level);
+            gameEngine.Run();
         }
         private static void LoadGame()
         {
@@ -79,7 +72,13 @@ namespace MemoryGames
         {
             throw new NotImplementedException();
         }
-        private static void WinGame()
+        public static void WinGame()
+        {
+            Console.SetCursorPosition(Console.WindowWidth / 2, 15);
+            Console.WriteLine("Win");
+        }
+
+        public static void NextLevel(int level)
         {
             throw new NotImplementedException();
         }
