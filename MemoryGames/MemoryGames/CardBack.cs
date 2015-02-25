@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+
 
 namespace MemoryGames
 {
+    [Serializable]
    public class CardBack : Card, IPrintable
    {
        const int cardWidth = 8;
@@ -16,7 +20,13 @@ namespace MemoryGames
             this.Widht = cardWidth;
             this.TopLeft = new CardPosition();
         }
-
+        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            info.AddValue("IsVisible", this.IsVisible);
+            info.AddValue("Height", this.Height);
+            info.AddValue("Widht", this.Widht);
+            info.AddValue("TopLeft", this.TopLeft);
+        }
         public override void DrowSelf(int row, int col)
         {
             if (IsVisible)

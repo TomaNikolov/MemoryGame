@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+
 
 namespace MemoryGames
 {
+    [Serializable]
     public class GameEngine
     {
         const int maxLevel = 3;
@@ -22,6 +26,14 @@ namespace MemoryGames
             this.Player = player;
             this.Check = new List<CardPosition>();
             this.Level = level;
+        }
+        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            info.AddValue("CardFace", this.CardFace);
+            info.AddValue("CardBack", this.CardBack);
+            info.AddValue("Player", this.Player);
+            info.AddValue("Check", this.Check);
+            info.AddValue("Level", this.Level);
         }
         public void Run()
         {
@@ -57,8 +69,6 @@ namespace MemoryGames
                         {
                             dimentionOne--;
                         }
-
-
                     }
                     if (keyInfo.Key.Equals(ConsoleKey.RightArrow))
                     {
@@ -70,6 +80,12 @@ namespace MemoryGames
                         {
                             Check.Add(new CardPosition(dimentionZero, dimentionOne));
                         }
+                    }
+                    if (keyInfo.Key.Equals(ConsoleKey.Escape))
+                    {
+                        GameManager.SaveGame(this.CardBack, this.CardFace,
+                                             this.Player, this.Check, this.Level);
+                        GameManager.ExitGame();
                     }
                 }
                 dimentionZero %= CardFace.GetLength(0);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace MemoryGames
@@ -49,6 +50,9 @@ namespace MemoryGames
                 case 0:
                     NewGame(1);
                     break;
+                case 1:
+                    LoadGame();
+                    break;
             }
         }
 
@@ -62,15 +66,15 @@ namespace MemoryGames
         }
         private static void LoadGame()
         {
-            throw new NotImplementedException();
+            Serializer serializer = new Serializer();
+            SerializeObject serializeObject = new SerializeObject();
+            serializeObject = serializer.DeSerializeObject("../../../Save.memory");
+            GameEngine gameEngine = serializeObject.GameEngine;
+            gameEngine.Run();
         }
-        private static void SaveGame()
+        public static void ExitGame()
         {
-            throw new NotImplementedException();
-        }
-        private static void ExitGame()
-        {
-            throw new NotImplementedException();
+            Environment.Exit(0);
         }
         public static void WinGame()
         {
@@ -81,6 +85,15 @@ namespace MemoryGames
         public static void NextLevel(int level)
         {
             throw new NotImplementedException();
+        }
+
+        public static void SaveGame(CardBack[,] cardBack, CardFace[,] cardFace, Player player, List<CardPosition> list, int level)
+        {
+            GameEngine saveGame = new GameEngine(cardBack,cardFace, player, level);
+            SerializeObject serializeObject = new SerializeObject();
+            serializeObject.GameEngine = saveGame;
+            Serializer serializer = new Serializer();
+            serializer.SerializeObject("../../../Save.memory", serializeObject);
         }
     }
 }
