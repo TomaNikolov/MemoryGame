@@ -51,6 +51,8 @@
     <Compile Include="GameBackground.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="GameManager.cs" />
+    <Compile Include="Help.cs" />
+    <Compile Include="HighScores.cs" />
     <Compile Include="IPrintable.cs" />
     <Compile Include="Memory.cs" />
     <Compile Include="Player.cs" />
