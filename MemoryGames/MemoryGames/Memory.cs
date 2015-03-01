@@ -11,7 +11,7 @@ namespace MemoryGames
         {
             Console.SetWindowSize(78, 50);
             GameBackground.Logo();
-           GameManager.Menu();
+            GameManager.Menu();
         }
 
        

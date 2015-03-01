@@ -53,6 +53,9 @@ namespace MemoryGames
                 case 1:
                     LoadGame();
                     break;
+                case 2: //added
+                    Help.ShowHelp();
+                    break;
             }
         }
 
@@ -78,8 +81,16 @@ namespace MemoryGames
         }
         public static void WinGame()
         {
-            Console.SetCursorPosition(Console.WindowWidth / 2, 15);
-            Console.WriteLine("Win");
+
+            GameBackground.CleanBackground();
+            Console.SetCursorPosition(28, 16); // was 12
+            Console.WriteLine("Congratulations, You Win!"); //changed   
+            Console.SetCursorPosition(28, 18);
+            Console.WriteLine("Press ESCAPE to close the game");
+            Console.SetCursorPosition(28, 19);
+            Console.WriteLine("and save your score!");
+            Thread.Sleep(5000);
+            GameBackground.CleanBackground();
         }
 
         public static void NextLevel(int level)
@@ -94,6 +105,22 @@ namespace MemoryGames
             serializeObject.GameEngine = saveGame;
             Serializer serializer = new Serializer();
             serializer.SerializeObject("../../../Save.memory", serializeObject);
+        }
+
+        public static void SaveScore(Player player) // new, 1.3.
+        {
+            string playerToWrite = player.Name;
+            string scoreToWrite = player.Score.ToString();
+
+            System.Text.StringBuilder builder = new System.Text.StringBuilder();
+            builder.Append(playerToWrite);
+            builder.Append(" ");
+            builder.Append(scoreToWrite);
+
+            string playerAndScore = builder.ToString();
+
+            HighScores.Write(playerAndScore);
+            
         }
     }
 }
