@@ -85,7 +85,6 @@ namespace MemoryGames
                     {
                         GameManager.SaveGame(this.CardBack, this.CardFace,
                                              this.Player, this.Check, this.Level);
-                        GameManager.SaveScore(this.Player);
                         GameManager.ExitGame();
                     }
                 }
@@ -146,6 +145,7 @@ namespace MemoryGames
                        else
                        {
                            GameBackground.CleanBackground();
+                           GameManager.SaveScore(this.Player); //moved from run
                            GameManager.WinGame();
                        }
                    }

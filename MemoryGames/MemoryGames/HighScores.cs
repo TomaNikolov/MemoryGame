@@ -57,26 +57,38 @@ namespace MemoryGames
             {
                 return;
             }
-
-            StreamReader reader = new StreamReader(fileName);
-
-            using (reader)
+            try
             {
-                int lineNumber = 0;
-                string line = reader.ReadLine();
-                
+                StreamReader reader = new StreamReader(fileName);
 
-                List<string> content = new List<string>();
-
-                while (line != null)
+                using (reader)
                 {
-                    lineNumber++;
-                    content.Add(line);
-                    line = reader.ReadLine();
-                }
+                    int lineNumber = 0;
+                    string line = reader.ReadLine();
 
-                GradeScores(content);
-            }                        
+
+                    List<string> content = new List<string>();
+
+                    while (line != null)
+                    {
+                        lineNumber++;
+                        content.Add(line);
+                        line = reader.ReadLine();
+                    }
+
+                    GradeScores(content);
+                } 
+            }
+            catch (Exception)
+            {
+                Console.SetCursorPosition(30, 29);               
+                Console.WriteLine("HighScores file had been corrupted.");
+                System.Threading.Thread.Sleep(1000);
+                if (File.Exists(fileName) == true)
+                {
+                    File.Delete(fileName); //deletes the corrupted file.
+                }
+            }                                
          }
     
         public static void GradeScores(List<string> content)
