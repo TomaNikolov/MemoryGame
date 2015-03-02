@@ -890,6 +890,15 @@ namespace MemoryGames
             Console.SetCursorPosition(topleft.X, topleft.Y);
             topleft.Y++;
             Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.Write("§");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.Write("\\/\\/\\/");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("§");
+
+            Console.SetCursorPosition(topleft.X, topleft.Y);
+            topleft.Y++;
+            Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("§§§§§§§§");
         }
 #endregion
