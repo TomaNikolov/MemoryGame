@@ -84,12 +84,8 @@ namespace MemoryGames
 
             GameBackground.CleanBackground();
             Console.SetCursorPosition(28, 16); // was 12
-            Console.WriteLine("Congratulations, You Win!"); //changed   
-            Console.SetCursorPosition(28, 18);
-            Console.WriteLine("Press ESCAPE to close the game");
-            Console.SetCursorPosition(28, 19);
-            Console.WriteLine("and save your score!");
-            Thread.Sleep(5000);
+            Console.WriteLine("Congratulations, You Win!"); //lst ch 2.3.      
+            Thread.Sleep(3000);
             GameBackground.CleanBackground();
         }
 
