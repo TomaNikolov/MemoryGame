@@ -39,9 +39,8 @@ namespace MemoryGames
         {
             int dimentionZero = 0;
             int dimentionOne = 0;
-           
+
             Refresh();
-            //TODO  win, exit
             Grid();
             while (true)
             {
@@ -83,6 +82,11 @@ namespace MemoryGames
                     }
                     if (keyInfo.Key.Equals(ConsoleKey.Escape))
                     {
+                        foreach (var position in this.Check)
+                        {
+                            this.CardFace[position.X, position.Y].IsVisible = false;
+                            this.CardBack[position.X, position.Y].IsVisible = true;
+                        }
                         GameManager.SaveGame(this.CardBack, this.CardFace,
                                              this.Player, this.Check, this.Level);
                         GameManager.ExitGame();
@@ -130,25 +134,25 @@ namespace MemoryGames
                 }
                 else
                 {
-                   this.Player.Score += this.Player.SuccessCoefficient > 0 ?
-                    point * this.Player.SuccessCoefficient : point;
-                   PrintPlayerInfo("Success");
-                   if(CheckForGameEnd())
-                   {
-                       if (this.Level < maxLevel)
-                       {
-                           NextLevel();
-                           GameBackground.CleanBackground();
-                           Refresh();
-                           Grid();
-                       }
-                       else
-                       {
-                           GameBackground.CleanBackground();
-                           GameManager.SaveScore(this.Player); //moved from run
-                           GameManager.WinGame();
-                       }
-                   }
+                    this.Player.Score += this.Player.SuccessCoefficient > 0 ?
+                     point * this.Player.SuccessCoefficient : point;
+                    PrintPlayerInfo("Success");
+                    if (CheckForGameEnd())
+                    {
+                        if (this.Level < maxLevel)
+                        {
+                            NextLevel();
+                            GameBackground.CleanBackground();
+                            Refresh();
+                            Grid();
+                        }
+                        else
+                        {
+                            GameBackground.CleanBackground();
+                            GameManager.SaveScore(this.Player); //moved from run
+                            GameManager.WinGame();
+                        }
+                    }
                 }
                 Check.Clear();
                 Thread.Sleep(800);
@@ -162,7 +166,7 @@ namespace MemoryGames
             this.Level++;
             this.CardBack = CardRandomPosition.GetCardBack(Level);
             this.CardFace = CardRandomPosition.GetRandomCardFace(this.CardBack.GetLength(0), this.CardBack.GetLength(1));
-            
+
         }
 
         private bool CheckForGameEnd()
@@ -175,7 +179,7 @@ namespace MemoryGames
                     sumOfVisibleCard++;
                 }
             }
-            if (sumOfVisibleCard == 
+            if (sumOfVisibleCard ==
                 CardFace.GetLength(0) * CardFace.GetLength(1))
             {
                 return true;
@@ -184,7 +188,7 @@ namespace MemoryGames
             {
                 return false;
             }
-                            
+
         }
 
         private void PrintPlayerInfo(string message)
@@ -193,7 +197,7 @@ namespace MemoryGames
             Console.SetCursorPosition(Console.WindowWidth / half - this.Player.Name.Length / half, 8);
             Console.WriteLine(this.Player.Name);
             Console.SetCursorPosition(Console.WindowWidth / half - this.Player.Score.ToString().Length / half - "score  ".Length / half, 10);
-            Console.WriteLine("Score: {0}",this.Player.Score);
+            Console.WriteLine("Score: {0}", this.Player.Score);
             Console.SetCursorPosition(Console.WindowWidth / half - message.Length / half, 12);
             Console.WriteLine(message);
             Console.ResetColor();
@@ -235,7 +239,7 @@ namespace MemoryGames
         }
 
         private void Grid()
-         {
+        {
             const int gridRightWhiteSpace = 2;
             const int gridDownWhiteSpace = 1;
             Console.ForegroundColor = ConsoleColor.Red;
