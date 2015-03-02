@@ -6,6 +6,7 @@ namespace MemoryGames
 {
     public class GameManager
     {
+        static int level = 1;
         public static void Menu()
         {
            const int menuItemCount = 3;
@@ -48,7 +49,7 @@ namespace MemoryGames
             switch (position)
             {
                 case 0:
-                    NewGame(1);
+                    NewGame(level);
                     break;
                 case 1:
                     LoadGame();
@@ -59,7 +60,7 @@ namespace MemoryGames
             }
         }
 
-        private static void NewGame(int level)
+        public static void NewGame(int level)
         {
 
             CardBack[,] cardBack = CardRandomPosition.GetCardBack(level);
@@ -67,13 +68,26 @@ namespace MemoryGames
              GameEngine gameEngine = new GameEngine(cardBack, cardFace, new Player(ConsoleInput.GetInput()), level); // 22:02, 21.2 Ivan (was "PlayerName")
             gameEngine.Run();
         }
-        private static void LoadGame()
+        public static void LoadGame()
         {
-            Serializer serializer = new Serializer();
-            SerializeObject serializeObject = new SerializeObject();
-            serializeObject = serializer.DeSerializeObject("../../../Save.memory");
-            GameEngine gameEngine = serializeObject.GameEngine;
-            gameEngine.Run();
+            try
+            {
+                string fileName = "../../../Save.memory";
+                Serializer serializer = new Serializer();
+                SerializeObject serializeObject = new SerializeObject();
+                serializeObject = serializer.DeSerializeObject(fileName);
+                GameEngine gameEngine = serializeObject.GameEngine;
+                gameEngine.Run();
+            }
+            catch(Exception)
+            {
+                GameBackground.CleanBackground();
+                Console.SetCursorPosition(8, 10);
+                Console.WriteLine("Error occured while trying to open file, or file doesn't exist ");
+                Thread.Sleep(1000);
+                GameBackground.CleanBackground();
+                GameManager.Menu();
+            }
         }
         public static void ExitGame()
         {
@@ -89,18 +103,14 @@ namespace MemoryGames
             GameBackground.CleanBackground();
         }
 
-        public static void NextLevel(int level)
-        {
-            throw new NotImplementedException();
-        }
-
         public static void SaveGame(CardBack[,] cardBack, CardFace[,] cardFace, Player player, List<CardPosition> list, int level)
         {
+            string fileName = "../../../Save.memory";
             GameEngine saveGame = new GameEngine(cardBack,cardFace, player, level);
             SerializeObject serializeObject = new SerializeObject();
             serializeObject.GameEngine = saveGame;
             Serializer serializer = new Serializer();
-            serializer.SerializeObject("../../../Save.memory", serializeObject);
+            serializer.SerializeObject(fileName, serializeObject);
         }
 
         public static void SaveScore(Player player) // new, 1.3.
